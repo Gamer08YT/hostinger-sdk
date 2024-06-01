@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "outDir": "./assets/js/",
+    "noImplicitAny": true,
+    "module": "CommonJS",
+    "target": "es5",
+    "allowJs": true,
+    "moduleResolution": "node"
+  }
+}
