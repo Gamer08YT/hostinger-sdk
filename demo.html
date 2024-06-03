@@ -9,7 +9,7 @@
 <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 <script type="application/javascript" src="assets/js/hostinger-sdk.js"></script>
 <script type="application/javascript">
-    let hostingerIO = new HostingerSDK.Hostinger("127.0.0.1", 80);
+    let hostingerIO = new HostingerSDK.Hostinger("http://127.0.0.1", 80);
 
     // Add Product to Cart.
     hostingerIO.getECommerce().getCart().addProduct({"name": "test"});

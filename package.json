@@ -1,0 +1,30 @@
+{
+  "name": "hostinger-sdk",
+  "version": "1.0.0",
+  "description": "Hostinger JavaScript SDK.",
+  "main": "index.js",
+  "scripts": {
+    "development": "webpack --mode=development",
+    "build": "webpack --mode=production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com//Gamer08YT/hostinger-sdk.git"
+  },
+  "keywords": [
+    "hostinger",
+    "sdk",
+    "ecommerce",
+    "hosting",
+    "cms"
+  ],
+  "author": "Jan Heil",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/jquery": "^3.5.30",
+    "ts-loader": "^9.5.1",
+    "typescript": "^5.4.5",
+    "webpack": "^5.91.0",
+    "webpack-cli": "^5.1.4"
+  }
+}

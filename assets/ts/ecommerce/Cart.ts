@@ -6,7 +6,7 @@ import {Hostinger} from "../Hostinger";
  */
 export class Cart {
     // Store API Endpoint of Cart.
-    private static urlIO = "/internal/ecommerce/cart";
+    private static urlIO = "ecommerce/cart";
 
     // If true Cart will be stored on Local Browser Storage.
     private allowLocalIO: boolean;

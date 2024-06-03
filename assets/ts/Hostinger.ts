@@ -12,7 +12,7 @@ export class Hostinger {
     private hostingIO: Hosting = new Hosting();
 
     // Store Credentials of Server/Endpoint.
-    public static credentialsIO : object = {
+    public static credentialsIO : any = {
         url: "http://localhost/",
         port: 80
     };
@@ -25,8 +25,8 @@ export class Hostinger {
      * @return {void}
      */
     constructor(hostnameIO: string, portIO: number) {
-        this.cr = hostnameIO;
-        this.portIO = portIO;
+        Hostinger.credentialsIO.url = hostnameIO;
+        Hostinger.credentialsIO.portIO = portIO;
     }
 
     /**
@@ -61,7 +61,7 @@ export class Hostinger {
      *
      * @returns {Object} The Hostinger credentials object.
      */
-    static getCredentials() : object {
+    static getCredentials() : any {
         return Hostinger.credentialsIO;
     }
 
@@ -72,6 +72,8 @@ export class Hostinger {
      * @return {string} - The API channel corresponding to the given routeIO.
      */
     static getAPIChannel(routeIO: string) {
+        console.log(this.getCredentials().url  + "/internal/" + routeIO);
+
         return this.getCredentials().url  + "/internal/" + routeIO;
     }
 
