@@ -21,7 +21,7 @@ export class Cart {
      *
      * @return {void}
      */
-    public allowStoreLocal(stateIO : boolean) {
+    private allowStoreLocal(stateIO : boolean) {
         this.allowLocalIO = stateIO;
 
         // Remove old Data from Browser Storage.
@@ -105,6 +105,7 @@ export class Cart {
             dataType: "json",
             success: (dataIO => {
                 // @todo Parse Data
+                console.log(dataIO);
             })
         })
     }
@@ -115,13 +116,15 @@ export class Cart {
      * @private
      * @returns {void}
      */
-    private saveToServer() {
+    protected saveToServer() {
         $.ajax(Hostinger.getAPIChannel(Cart.urlIO), {
             method: "POST",
             dataType: "json",
             data: JSON.stringify(this.itemsIO),
             success: (dataIO => {
+                Hostinger.handleResponse(dataIO);
                 // @todo Parse Data
+                console.log(dataIO);
             })
         })
     }
@@ -130,7 +133,7 @@ export class Cart {
      * Handles the add operation by saving the data.
      * @returns {void}
      */
-    protected handleSave() {
+    private handleSave() {
         // Only Save to Browser if allowed (Cookie Consent etc).
         if(this.allowLocalIO)
             this.saveToBrowser()
@@ -148,7 +151,7 @@ export class Cart {
      *
      * @return {void} - This method does not return a value.
      */
-    private removeOldStorage() {
+    protected removeOldStorage() {
         localStorage.removeItem(Hostinger.getPrefix() + ".cart");
 
         // Print Debug Message.

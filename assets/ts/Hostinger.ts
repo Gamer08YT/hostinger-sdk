@@ -11,14 +11,22 @@ export class Hostinger {
     // Store Hosting Instance.
     private hostingIO: Hosting = new Hosting();
 
+    // Store Credentials of Server/Endpoint.
+    public static credentialsIO : object = {
+        url: "http://localhost/",
+        port: 80
+    };
+
     /**
-     * Object representing the credentials for I/O operations.
+     * Creates a new instance of the constructor.
      *
-     * @typedef {Object} CredentialsIO
-     * @property {string} url - The URL for the I/O operations.
+     * @param {string} hostnameIO - The hostname for the IO connection.
+     * @param {number} portIO - The port number for the IO connection.
+     * @return {void}
      */
-    public static credentialsIO = {
-        url: "127.0.0.1"
+    constructor(hostnameIO: string, portIO: number) {
+        this.cr = hostnameIO;
+        this.portIO = portIO;
     }
 
     /**
@@ -51,9 +59,9 @@ export class Hostinger {
     /**
      * Retrieves the Hostinger credentials.
      *
-     * @returns {Object} - The Hostinger credentials object.
+     * @returns {Object} The Hostinger credentials object.
      */
-    static getCredentials() {
+    static getCredentials() : object {
         return Hostinger.credentialsIO;
     }
 
@@ -74,6 +82,18 @@ export class Hostinger {
      */
     static debug(messageIO : string) {
         console.debug(messageIO);
+    }
+
+    /**
+     * Handles the response received from the server.
+     *
+     * @param {object} dataIO - The response data received from the server.
+     *
+     * @return {void}
+     */
+    static handleResponse(dataIO: object) {
+        // Print Debug Message.
+        Hostinger.debug(`Received Response from Server (${dataIO}).`);
     }
 }
 
