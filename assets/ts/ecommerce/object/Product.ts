@@ -18,26 +18,27 @@ export class Product {
     public static productIO: string = "ecommerce/product/{$id}";
 
     // Store Name of Product.
-    private name : string;
+    public name : string;
 
     // Store Short Description of Product.
-    private description : string;
+    public description : string;
 
     // Store normal Price of Product.
-    private price : number;
+    public price : number;
 
     // Store Type of Product.
-    private type : ProductType;
+    public type : ProductType;
 
     // Store Amount of Products in Warehouse.
-    private stock : number;
+    public stock : number;
 
     // Store Manufacturer of Product.
-    private manufacturer : Manufacturer;
+    public manufacturer : Manufacturer;
 
     // Store European Article Number.
-    private ean : string;
+    public ean : string;
 
     // Store Product Configurations (Slider, etc).
-    private settings : Object;
+    public settings : Object;
+
 }

@@ -5,14 +5,14 @@
  */
 export class ProductCategory {
     // Store Name of Category.
-    private name: string;
+    public name: string;
 
     // Store Description of Category.
-    private description: string;
+    public description: string;
 
     // Store ID of Category.
-    private id : number;
+    public id : number;
 
     // Store Parent Item.
-    private parent : ProductCategory;
+    public parent : ProductCategory;
 }

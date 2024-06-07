@@ -9,10 +9,24 @@
 <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 <script type="application/javascript" src="assets/js/hostinger-sdk.js"></script>
 <script type="application/javascript">
+    import {Product} from "./assets/ts/ecommerce/object/Product";
+    import {ProductType} from "./assets/ts/ecommerce/enums/ProductType";
+
     let hostingerIO = new HostingerSDK.Hostinger("http://127.0.0.1", 80);
 
+    // Create new Dummy Product.
+    let productIO = new Product();
+
+    // Some Dummy Data.
+    productIO.name = "Test";
+    productIO.manufacturer = new Manufacturer();
+    productIO.stock = 10;
+    productIO.price = 5.99;
+    productIO.type = ProductType.PHYSICAL;
+    productIO.ean = "1234567890123"
+
     // Add Product to Cart.
-    hostingerIO.getECommerce().getCart().addProduct({"name": "test"});
+    hostingerIO.getECommerce().getCart().addProduct(productIO);
 </script>
 </body>
 </html>

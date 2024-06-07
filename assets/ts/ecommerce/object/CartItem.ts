@@ -6,17 +6,17 @@ import {Product} from "./Product";
  */
 export class CartItem {
     // Store ID of Cart Server Entry.
-    private id : number;
+    public id : number;
 
     // Store Customisation Comment of Cart Item.
-    private comment : string;
+    public comment : string;
 
     // Store Amount of Product.
-    private amount : number;
+    public amount : number;
 
     // Store Product of Cart Item.
-    private product : Product;
+    public product : Product;
 
     // Store Product Configurations (Color, Size, etc).
-    private settings : Object;
+    public settings : Object;
 }
