@@ -88,20 +88,20 @@ export class Cart {
      * @private
      * @return {void}
      */
-    protected saveToBrowser() {
+    protected saveToBrowser () : void  {
         localStorage.setItem(Hostinger.getPrefix() + ".cart", JSON.stringify(this.itemsIO));
     }
 
     /**
      * Synchronizes data from the server.
-     *
+     * @todo: Async.
      * @private
      * @method syncFromServer
      * @returns {void}
      * @todo Sync.
      * @todo Parse Data
      */
-    private syncFromServer() {
+    private syncFromServer() : void {
         // @todo: Sync.
         $.ajax(Hostinger.getAPIChannel(Cart.urlIO), {
             method: "GET",
@@ -119,7 +119,7 @@ export class Cart {
      * @private
      * @returns {void}
      */
-    protected saveToServer() {
+    protected saveToServer() : void {
         $.ajax(Hostinger.getAPIChannel(Cart.urlIO), {
             method: "POST",
             dataType: "json",
@@ -136,7 +136,7 @@ export class Cart {
      * Handles the add operation by saving the data.
      * @returns {void}
      */
-    private handleSave() {
+    private handleSave() : void {
         // Only Save to Browser if allowed (Cookie Consent etc).
         if(this.allowLocalIO)
             this.saveToBrowser()
@@ -154,7 +154,7 @@ export class Cart {
      *
      * @return {void} - This method does not return a value.
      */
-    protected removeOldStorage() {
+    protected removeOldStorage() : void {
         localStorage.removeItem(Hostinger.getPrefix() + ".cart");
 
         // Print Debug Message.

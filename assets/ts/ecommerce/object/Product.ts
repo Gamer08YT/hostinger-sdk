@@ -8,6 +8,15 @@ import {Manufacturer} from "./Manufacturer";
  * @class
  */
 export class Product {
+    // Store API Endpoint of Products.
+    public static urlIO: string = "ecommerce/product";
+
+    // Store API Endpoint of Checksum.
+    public static checksumIO: string = "ecommerce/product/checksum";
+
+    // Store API Endpoint of Product.
+    public static productIO: string = "ecommerce/product/{$id}";
+
     // Store Name of Product.
     private name : string;
 
