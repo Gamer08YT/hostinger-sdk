@@ -1,4 +1,5 @@
 import {Hostinger} from "../Hostinger";
+import {CartItem} from "./object/CartItem";
 
 /**
  * Represents ECommerce Cart Features of Hostinger.
@@ -12,7 +13,7 @@ export class Cart {
     private allowLocalIO: boolean;
 
     // Store Products in Cart.
-    private itemsIO : Array<any> = new Array();
+    private itemsIO : Array<CartItem> = new Array();
 
     /**
      * Set the state of allowing local IO.
@@ -34,8 +35,10 @@ export class Cart {
      * Adds a product to the itemsIO array.
      *
      * @param {Object} itemIO - The product to be added.
+     *
+     * @return {void}
      */
-    public addProduct(itemIO: object) {
+    public addProduct(itemIO: CartItem) {
         this.itemsIO.push(itemIO);
 
         // Save to Server (optional Browser).
@@ -48,7 +51,7 @@ export class Cart {
      * @param {object} itemIO - The object representing the product to be removed.
      * @return {undefined}
      */
-    public removeProduct(itemIO : object) {
+    public removeProduct(itemIO : CartItem) {
         delete this.itemsIO[this.itemsIO.indexOf(itemIO)];
 
         // Save to Server (optional Browser).
