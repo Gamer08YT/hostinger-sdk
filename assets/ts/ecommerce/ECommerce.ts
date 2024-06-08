@@ -48,6 +48,43 @@ export class ECommerce {
     }
 
     /**
+     * Fetches the checksum of a product from the API based on the given ID.
+     *
+     * @param {string} idIO - The ID of the product to fetch the checksum for.
+     *
+     * @return {string} The checksum of the product.
+     */
+    public getProductChecksum(idIO : string) : string {
+        $.ajax(Hostinger.getAPIChannel(Product.productChecksumIO.replace("{id}", idIO)), {
+            method: "GET",
+            dataType: "json",
+            success: (dataIO => {
+                // @todo Parse Data
+            })
+        });
+
+
+        return null;
+    }
+
+    /**
+     * Retrieves the checksum of the products using an API call.
+     *
+     * @returns {string} The checksum of the products.
+     */
+    public getProductsChecksum() : string {
+        $.ajax(Hostinger.getAPIChannel(Product.checksumIO), {
+            method: "GET",
+            dataType: "json",
+            success: (dataIO => {
+                // @todo Parse Data
+            })
+        });
+
+        return null;
+    }
+
+    /**
      * Retrieves all products from the server.
      *
      * @returns {Array<Product>} An array containing all products retrieved from the server.
@@ -67,18 +104,12 @@ export class ECommerce {
                 })
             })
         } else {
-            $.ajax(Hostinger.getAPIChannel(Product.checksumIO), {
-                method: "GET",
-                dataType: "json",
-                success: (dataIO => {
-                    // @todo Parse Data
-                    //if(checksum != this.checksum...)
+            this.getProductsChecksum();
 
-                    // Renew Array if Checksum is Expired.
-                    arrayIO = this.getAllProductsFromServer(true);
-                    console.log(dataIO);
-                })
-            })
+            //if(checksum != this.checksum...)
+
+            // Renew Array if Checksum is Expired.
+            arrayIO = this.getAllProductsFromServer(true);
         }
 
         // Save Products to Browser if allowed.

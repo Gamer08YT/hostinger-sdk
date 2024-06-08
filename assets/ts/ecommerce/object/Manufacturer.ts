@@ -15,4 +15,5 @@ export class Manufacturer {
 
     // Store Logo / Image of Manufacturer.
     private image : string;
+
 }

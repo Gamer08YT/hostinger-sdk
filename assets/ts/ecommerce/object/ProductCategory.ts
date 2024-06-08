@@ -15,4 +15,5 @@ export class ProductCategory {
 
     // Store Parent Item.
     public parent : ProductCategory;
+
 }
