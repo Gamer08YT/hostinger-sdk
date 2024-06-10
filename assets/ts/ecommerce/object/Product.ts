@@ -11,6 +11,9 @@ export class Product {
     // Store API Endpoint of Products.
     public static urlIO: string = "ecommerce/product";
 
+    // Store List Endpoint.
+    public static listIO : string = Product.urlIO + "/list";
+
     // Store API Endpoint of Checksum.
     public static checksumIO: string = "ecommerce/product/checksum";
 
@@ -19,6 +22,9 @@ export class Product {
 
     // Store API Endpoint of Product Checksum.
     public static productChecksumIO: string = Product.productIO + "/checksum";
+
+    // Store ID of Product.
+    public id : number;
 
     // Store Name of Product.
     public name : string;
@@ -43,4 +49,9 @@ export class Product {
 
     // Store Product Configurations (Slider, etc).
     public settings : Object;
+
+
+    constructor(id: number) {
+        this.id = id;
+    }
 }

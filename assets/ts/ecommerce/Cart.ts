@@ -106,6 +106,7 @@ export class Cart {
         $.ajax(Hostinger.getAPIChannel(Cart.urlIO), {
             method: "GET",
             dataType: "json",
+            crossDomain: Hostinger.getCredentials().cors,
             success: (dataIO => {
                 // @todo Parse Data
                 console.log(dataIO);
@@ -123,6 +124,7 @@ export class Cart {
         $.ajax(Hostinger.getAPIChannel(Cart.urlIO), {
             method: "POST",
             dataType: "json",
+            crossDomain: Hostinger.getCredentials().cors,
             data: JSON.stringify(this.itemsIO),
             success: (dataIO => {
                 Hostinger.handleResponse(dataIO);

@@ -14,19 +14,21 @@
 
     let hostingerIO = new HostingerSDK.Hostinger("http://127.0.0.1", 80);
 
-    // Create new Dummy Product.
-    let productIO = new HostingerSDK.Product();
+    console.log(hostingerIO.getECommerce().getProducts());
 
-    // Some Dummy Data.
-    productIO.name = "Test";
-    productIO.manufacturer = new HostingerSDK.Manufacturer();
-    productIO.stock = 10;
-    productIO.price = 5.99;
-    productIO.type = ProductType.PHYSICAL;
-    productIO.ean = "1234567890123"
-
-    // Add Product to Cart.
-    hostingerIO.getECommerce().getCart().addProduct(productIO);
+    // // Create new Dummy Product.
+    // let productIO = new HostingerSDK.Product(1);
+    //
+    // // Some Dummy Data.
+    // productIO.name = "Test";
+    // productIO.manufacturer = new HostingerSDK.Manufacturer();
+    // productIO.stock = 10;
+    // productIO.price = 5.99;
+    // productIO.type = ProductType.PHYSICAL;
+    // productIO.ean = "1234567890123"
+    //
+    // // Add Product to Cart.
+    // hostingerIO.getECommerce().getCart().addProduct(productIO);
 </script>
 </body>
 </html>

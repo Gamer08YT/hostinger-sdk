@@ -58,8 +58,10 @@ export class ECommerce {
         $.ajax(Hostinger.getAPIChannel(Product.productChecksumIO.replace("{id}", idIO)), {
             method: "GET",
             dataType: "json",
+            crossDomain: Hostinger.getCredentials().cors,
             success: (dataIO => {
                 // @todo Parse Data
+                console.log(dataIO);
             })
         });
 
@@ -76,8 +78,10 @@ export class ECommerce {
         $.ajax(Hostinger.getAPIChannel(Product.checksumIO), {
             method: "GET",
             dataType: "json",
+            crossDomain: Hostinger.getCredentials().cors,
             success: (dataIO => {
                 // @todo Parse Data
+                console.log(dataIO);
             })
         });
 
@@ -95,9 +99,10 @@ export class ECommerce {
 
         // Check for Override or not allowed for Local Storage.
         if(overrideIO || !this.allowStoreProductsLocal) {
-            $.ajax(Hostinger.getAPIChannel(Product.urlIO), {
+            $.ajax(Hostinger.getAPIChannel(Product.listIO), {
                 method: "GET",
                 dataType: "json",
+                crossDomain: Hostinger.getCredentials().cors,
                 success: (dataIO => {
                     // @todo Parse Data
                     console.log(dataIO);

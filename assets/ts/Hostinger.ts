@@ -13,8 +13,9 @@ export class Hostinger {
 
     // Store Credentials of Server/Endpoint.
     public static credentialsIO : any = {
-        url: "http://localhost/",
-        port: 80
+        url: "http://127.0.0.1/",
+        port: 80,
+        cors: false
     };
 
     /**
